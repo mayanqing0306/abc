@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.itheima.dao.UserDao">
+ <select id="findUserByQueryVo" resultType="user" parameterType="queryvo">
+ 	select * from user where username=#{user.username}
+ 	</select>
+ <!-- 配置查询所有操作 -->
+ <select id="findAll" resultType="user">
+ 	select * from user
+ </select>
+ 
+ <!--配置根据id查询用户信息  -->
+ <select id="findByid" resultType="user" parameterType="integer">
+ 	select * from user where id=#{id}
+ </select>
+ 
+ <!--配置添加的方法  -->
+ <insert id="saveUser" parameterType="user" >
+ 	<!-- 配置最后插入的id --> 
+ 	<selectKey keyColumn="id" keyProperty="id" resultType="int">
+ 		select last_insert_id();
+ 	</selectKey> 
+ 		insert into user(username,sex,birthday,address)value(#{username},#{sex},#{birthday},#{address})
+ </insert>
+ 
+ <!--配置修改的方法  -->
+ 	<update id="updateUser" parameterType="user" >
+ 		update user set username=#{username},sex=#{sex},birthday=#{birthday},address=#{address} where id=#{id}
+ 	</update>
+ 	
+ 	<!-- 配置删除信息的方法 -->
+ 	<delete id="deleteUser" parameterType="int" >
+ 		delete from user where id=#{id}
+ 	</delete>
+ 	
+ 	<!-- 配置模糊查询的方法 -->
+ 	<select id="findByname" resultType="user" parameterType="string">
+ 		select * from user where username like #{name} 
+ 		<!--  select * from  user where username like '%${value}%' -->
+ 	</select>
+ 	
+ 	<!--配置查询总条数  -->
+ 	<select id="findTotal" resultType="int" >
+ 		select count(*) from user
+ 	</select>
+ 	
+ 	
+ </mapper>
+ 
