@@ -8,6 +8,7 @@ import com.itheima.domain.User;
 
 //持久层的操作接口
 public interface UserDao {
+	//list<>hhh
 	List<User> findUserByQueryVo(QueryVo vo);
 
 	/**
