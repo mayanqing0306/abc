@@ -6,46 +6,46 @@ import java.util.List;
 import com.itheima.domain.QueryVo;
 import com.itheima.domain.User;
 
-//Ёж╬ц╡Ц╣д╡ывВ╫с©з
+//О©╫ж╬ц╡О©╫д╡О©╫О©╫О©╫О©╫с©О©╫
 public interface UserDao {
-	//list<>hhh
+	//list<>hhhxjb
 	List<User> findUserByQueryVo(QueryVo vo);
 
 	/**
-	 * ╡Ия╞кЫспсц╩╖пео╒
+	 * О©╫О©╫я╞О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫о╒
 	 * @return
 	 */
 	List<User> findAll();
 	/**
-	 * ╦Ы╬щid╡Ия╞сц╩╖пео╒
+	 * О©╫О©╫О©╫О©╫idО©╫О©╫я╞О©╫ц╩О©╫О©╫О©╫о╒
 	 * @return
 	 */
 	User findByid(Integer userid);
 	
 	/**
-	 * ╠ё╢Фсц╩╖пео╒ё╗лМ╪ссц╩╖пео╒ё╘
+	 * О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫о╒О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫о╒О©╫О©╫
 	 */
 	void saveUser(User user);
 	
 	/**
-	 * пч╦дсц╩╖пео╒
+	 * О©╫ч╦О©╫О©╫ц╩О©╫О©╫О©╫о╒
 	 */
 	void updateUser(User user);
 	
 	/**
-	 * и╬ЁЩсц╩╖пео╒,╦Ы╬щсц╩╖id╤тсц╩╖╫Ьппи╬ЁЩ╡ывВ
+	 * и╬О©╫О©╫О©╫ц╩О©╫О©╫О©╫о╒,О©╫О©╫О©╫О©╫О©╫ц╩О©╫idО©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫и╬О©╫О©╫О©╫О©╫О©╫О©╫
 	 */
 	void deleteUser(Integer userid);
 	
 	/**
-	 * дё╨Щ╡Ия╞ё╗╦Ы╬щсц╩╖цШ╡Ия╞пео╒ё╘
+	 * дёО©╫О©╫О©╫О©╫я╞О©╫О©╫О©╫О©╫О©╫О©╫О©╫ц╩О©╫О©╫О©╫О©╫О©╫я╞О©╫О©╫о╒О©╫О©╫
 	 * @param username
 	 * @return
 	 */
 	List<User> findByname(String username);
 	
 	/**
-	 * ╡Ия╞вэлУйЩ
+	 * О©╫О©╫я╞О©╫О©╫О©╫О©╫О©╫О©╫
 	 * @return
 	 */
 	int findTotal();
